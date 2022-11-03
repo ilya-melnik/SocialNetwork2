@@ -5,17 +5,14 @@ import {Navbur} from "./components/Navbar";
 import {Profile} from "./components/Profile";
 
 const App = () => {
-    return <div className="App">
+    return (
         <div className='app-wrapper'>
-
-            <Header/>
-            <Navbur/>
-            <Profile/>
-
-
-        </div>
+        <Header/>
+        <Navbur/>
+        <Profile/>
     </div>
 
+    )
 }
 
 export default App;

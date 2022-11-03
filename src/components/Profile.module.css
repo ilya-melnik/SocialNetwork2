@@ -1,0 +1,12 @@
+.content {
+    grid-area: c;
+    background-color: cornflowerblue;
+}
+.item {
+    color: darkred;
+}
+
+.avatar{
+    width: 100px;
+margin: 5px 10px;
+}
