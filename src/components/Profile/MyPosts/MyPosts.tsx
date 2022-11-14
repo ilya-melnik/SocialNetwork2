@@ -5,17 +5,20 @@ import s from './MyPosts.module.css'
 
 export const MyPost = () => {
     return (
-        <div>
-            My post
+        <div className={s.postBlock}>
+            <h3>My post</h3>
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
+                <div><textarea></textarea></div>
+                <div>
+                    <button>Add post</button>
+                </div>
+
 
             </div>
             <div className={s.posts}>
                 <Post message="How are you ?" like={15}/>
                 <Post message="I'm fine." like={12}/>
-                <Post message={"and you?" } like={10}/>
+                <Post message={"and you?"} like={10}/>
 
             </div>
 
