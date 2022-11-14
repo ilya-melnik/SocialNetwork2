@@ -10,9 +10,6 @@ export const Profile = () => {
     return (
         <div className={s.content}>
             <ProfileInfo/>
-
-
-
             <MyPost/>
         </div>)
 }

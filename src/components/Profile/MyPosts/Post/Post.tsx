@@ -3,7 +3,8 @@ import React from "react";
 
 
 export type PostType = {
-    message: string;
+    id:number
+    message: string
     like: number
 }
 export const Post = (props: PostType) => {
