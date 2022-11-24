@@ -29,9 +29,7 @@ export const Dialogs = () => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
-
                 {dialogsElements}
-
             </div>
 
             <div className={s.messages}>
