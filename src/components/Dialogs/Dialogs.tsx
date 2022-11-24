@@ -1,14 +1,7 @@
 import React from 'react';
 import s from './Dialogs.module.css'
-import {DialogsItem} from "./DialogsItem";
-
-type MessageType = {
-    id: number
-    message: string
-}
-const Message = (props: MessageType) => {
-    return <div className={s.message}>{props.message}</div>
-}
+import {DialogItem} from "./DialogsItem/DialogItem";
+import {Message} from "./Message/Message";
 
 
 export const Dialogs = () => {
@@ -24,8 +17,9 @@ export const Dialogs = () => {
         {id: 3, message: 'Hello !!!'},
 
     ]
-    let dialogsElements = dialogsItemData.map(el => <DialogsItem name={el.name} id={el.id}/>)
+    let dialogsElements = dialogsItemData.map(el => <DialogItem name={el.name} id={el.id}/>)
     let messagesElements = messageData.map(m => <Message id={m.id} message={m.message}/>)
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItem}>
