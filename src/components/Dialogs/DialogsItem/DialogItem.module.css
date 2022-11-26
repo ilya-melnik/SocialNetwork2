@@ -6,3 +6,14 @@
 .dialog a.active{
     color: goldenrod;
 }
+
+.imgUser img {
+    color: white;
+    text-decoration: none;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 70px;
+}
+
+

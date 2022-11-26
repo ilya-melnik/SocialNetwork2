@@ -18,6 +18,7 @@ export type DialogsPageType={
 export type DialogItemType = {
     id:number
     name:string
+    img:string
 }
 export type MessageType = {
     id: number
@@ -38,10 +39,10 @@ export let state: RootStateType = {
     },
     dialogsPage: {
         dialogs: [
-            {id: 1, name: 'Nina'},
-            {id: 2, name: 'Vova'},
-            {id: 3, name: 'Ilya'},
-            {id: 4, name: 'Vlad'},
+            {id: 1, name: 'Nina', img: 'https://cdn.pixabay.com/photo/2017/03/14/14/49/cat-2143332_960_720.jpg'},
+            {id: 2, name: 'Vova', img: 'https://cdn.pixabay.com/photo/2016/03/28/10/05/kitten-1285341_960_720.jpg'},
+            {id: 3, name: 'Ilya', img: 'https://cdn.pixabay.com/photo/2015/06/07/19/42/animal-800760_960_720.jpg'},
+            {id: 4, name: 'Vlad', img: 'https://cdn.pixabay.com/photo/2016/06/14/00/14/cat-1455468_960_720.jpg'},
         ],
         messages: [
             {id: 1, message: 'Hello everyone !'},
