@@ -53,6 +53,14 @@ export let state: RootStateType = {
     // sidebar: {}
 }
 
+export type FunctionType = {
+    addPost: (value:string)=>void
+}
+export const addPost = (value: string) => {
+    let newPost = {id: 1, message: value, likesCount: 5}
+    console.log(newPost)
+    state.profilePage.posts.push(newPost)
+}
 
 
 

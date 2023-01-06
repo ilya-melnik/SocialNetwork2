@@ -1,22 +1,22 @@
 import React, {RefObject} from "react";
 import {Post} from "./Post/Post";
 import s from './MyPosts.module.css'
-import {PostType, ProfilePageType} from "../../../redux/state";
+import {FunctionType, PostType, ProfilePageType} from "../../../redux/state";
 
 
 type MyPostsType = {
     posts: ProfilePageType
+    addPost: (value: string)=>void
 }
-
 export const MyPost = (props: MyPostsType) => {
-
     let postsElements = props.posts.posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount}/>)
     const newPostElement:RefObject<HTMLTextAreaElement> = React.createRef();
 
     const addText = () => {
+
         let textValue = newPostElement.current?.value
-        alert(textValue)
-    }
+        textValue? props.addPost(textValue):''
+       }
     return (
         <div className={s.postBlock}>
             <h3>My post</h3>
