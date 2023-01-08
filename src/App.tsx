@@ -10,7 +10,7 @@ import {FunctionType, RootStateType, updateNewPostText} from "./redux/state";
 
 type AppType = {
     state:RootStateType
-    addPost: (value: string)=>void
+    addPost: ()=>void
     updateNewPostText: (value: string)=>void
 }
 const App = (props: AppType) => {

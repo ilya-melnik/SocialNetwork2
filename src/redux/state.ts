@@ -60,9 +60,9 @@ export let state: RootStateType = {
 export type FunctionType = {
     addPost: (value:string)=>void
 }
-export const addPost = (value: string) => {
-    let newPost = {id: 1, message: value, likesCount: 5}
-    console.log(newPost)
+export const addPost = () => {
+    let newPost = {id: 1, message: state.profilePage.newPostsText, likesCount: 5}
+    state.profilePage.newPostsText = ''
     state.profilePage.posts.push(newPost)
 
     renderEntireTree(state)

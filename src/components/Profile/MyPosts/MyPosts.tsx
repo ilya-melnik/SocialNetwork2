@@ -6,7 +6,7 @@ import {FunctionType, PostType, ProfilePageType} from "../../../redux/state";
 
 type MyPostsType = {
     posts: ProfilePageType
-    addPost: (value: string)=>void
+    addPost: ()=>void
     newPostsText: string
     updateNewPostText: (value: string)=>void
 }
@@ -16,11 +16,9 @@ export const MyPost = (props: MyPostsType) => {
 
     const addText = () => {
 
-        let textValue = newPostElement.current?.value
-        if (textValue){
-            props.addPost(textValue)
+            props.addPost()
             props.updateNewPostText('')
-        }
+
 
 
         // textValue? props.addPost(textValue):''
