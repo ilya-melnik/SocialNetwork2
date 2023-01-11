@@ -1,5 +1,6 @@
-import {renderEntireTree} from "../render";
+let renderEntireTree = (state: RootStateType) => {
 
+}
 export type RootStateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogsPageType
@@ -14,20 +15,19 @@ export type PostType = {
 }
 
 //dialogs
-export type DialogsPageType={
-    dialogs:Array<DialogItemType>
+export type DialogsPageType = {
+    dialogs: Array<DialogItemType>
     messages: Array<MessageType>
 }
 export type DialogItemType = {
-    id:number
-    name:string
-    img:string
+    id: number
+    name: string
+    img: string
 }
 export type MessageType = {
     id: number
     message: string
 }
-
 
 
 export let state: RootStateType = {
@@ -58,7 +58,7 @@ export let state: RootStateType = {
 }
 
 export type FunctionType = {
-    addPost: (value:string)=>void
+    addPost: (value: string) => void
 }
 export const addPost = () => {
     let newPost = {id: 1, message: state.profilePage.newPostsText, likesCount: 5}
@@ -73,7 +73,9 @@ export const updateNewPostText = (value: string) => {
     renderEntireTree(state)
 }
 
-
+export const subscribe = (observer: any) => {
+    renderEntireTree = observer
+}
 
 
 
