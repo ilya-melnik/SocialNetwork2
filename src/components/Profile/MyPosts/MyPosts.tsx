@@ -8,7 +8,7 @@ type MyPostsType = {
     posts: ProfilePageType
     addPost: ()=>void
     newPostsText: string
-    updateNewPostText: (value: string)=>void
+    updateNewPostText: (value: string )=>void
 }
 export const MyPost = (props: MyPostsType) => {
     let postsElements = props.posts.posts.map(p => <Post id={p.id} message={p.message} likesCount={p.likesCount}/>)
@@ -19,15 +19,11 @@ export const MyPost = (props: MyPostsType) => {
             props.addPost()
             props.updateNewPostText('')
 
-
-
-        // textValue? props.addPost(textValue):''
-        // newPostElement.current?.value = ''
        }
 
        const getCurrentValue = () => {
            let textValue = newPostElement.current?.value
-props.updateNewPostText(textValue?textValue:'')
+props.updateNewPostText(textValue || '')
        }
     return (
         <div className={s.postBlock}>
