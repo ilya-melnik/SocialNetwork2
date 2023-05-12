@@ -1,7 +1,7 @@
 import React, {RefObject} from "react";
 import {Post} from "./Post/Post";
 import s from './MyPosts.module.css'
-import {FunctionType, PostType, ProfilePageType} from "../../../redux/state";
+import { ProfilePageType} from "../../../redux/state";
 
 
 type MyPostsType = {
@@ -15,7 +15,8 @@ export const MyPost = (props: MyPostsType) => {
     const addText = () => {
 
         let textValue = newPostElement.current?.value
-        textValue? props.addPost(textValue):''
+        // textValue? props.addPost(textValue):''
+        textValue && props.addPost(textValue)
        }
     return (
         <div className={s.postBlock}>
