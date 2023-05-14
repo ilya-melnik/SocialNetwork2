@@ -18,6 +18,6 @@ export const Profile = (props: ProfileType) => {
     return (
         <div className={s.content}>
             <ProfileInfo/>
-            <MyPost posts={props.profilePage}  addPost={props.addPost}   updateNewPostText={props.updateNewPostText} message={props.profilePage.newPostText}/>
+            <MyPost posts={props.profilePage}  addPost={props.addPost}   updateNewPostText={props.updateNewPostText} newPostText={props.profilePage.newPostText}/>
         </div>)
 }

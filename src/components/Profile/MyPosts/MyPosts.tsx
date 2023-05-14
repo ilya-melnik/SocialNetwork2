@@ -7,7 +7,7 @@ import {ProfilePageType} from "../../../redux/state";
 type MyPostsType = {
     posts: ProfilePageType
     addPost: () => void
-    message: string
+    newPostText: string
     updateNewPostText: (newText: string)=>void
 }
 export const MyPost = (props: MyPostsType) => {
@@ -25,7 +25,7 @@ return (
     <div className={s.postBlock}>
         <h3>My post</h3>
         <div>
-            <div><textarea  onChange={onPostChange} value={props.message}></textarea></div>
+            <div><textarea  onChange={onPostChange} value={props.newPostText}></textarea></div>
             <div>
                 <button onClick={addText}>Add post</button>
             </div>
