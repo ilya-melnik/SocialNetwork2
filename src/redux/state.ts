@@ -22,6 +22,7 @@ export type PostType = {
 export type DialogsPageType={
     dialogs:Array<DialogItemType>
     messages: Array<MessageType>
+    newDialogMessage: string
 }
 export type DialogItemType = {
     id:number
@@ -59,6 +60,7 @@ export let state: RootStateType = {
             {id: 2, message: 'How are you ?'},
             {id: 3, message: 'Hello !!!'},
         ],
+        newDialogMessage: 'Hello Cats !!! How are you?',
     },
     // sidebar: {}
 }
@@ -76,10 +78,25 @@ export const addPost = () => {
     state.profilePage.newPostText = ''
     rerenderEntireTree(state)
 }
+export const addDialogMessage = () => {
+    let newPost = {
+        id: 1,
+        message: state.dialogsPage.newDialogMessage
+    }
+    state.dialogsPage.messages.push(newPost)
+    state.dialogsPage.newDialogMessage = ''
+    rerenderEntireTree(state)
+}
+
 
 export const updateNewPostText = (newText: string) => {
 
     state.profilePage.newPostText = newText
+    rerenderEntireTree(state)
+}
+export const updateNewDialogMesagge = (newText: string) => {
+
+    state.dialogsPage.newDialogMessage = newText
     rerenderEntireTree(state)
 }
 

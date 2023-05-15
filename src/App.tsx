@@ -5,13 +5,15 @@ import {Navbur} from "./components/Navbar/Navbar";
 import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import {FunctionType, RootStateType, updateNewPostText} from "./redux/state";
+import {addDialogMessage, FunctionType, RootStateType, updateNewDialogMesagge, updateNewPostText} from "./redux/state";
 
 
 type AppType = {
     state: RootStateType
     addPost: () => void
+    addDialogMessage: () => void
     updateNewPostText: (newText: string) => void
+    updateNewDialogMesagge: (newText: string) => void
 
 
 }
@@ -22,7 +24,7 @@ const App = (props: AppType) => {
                 <Header/>
                 <Navbur/>
                 <div className='app-wrapper-content'>
-                    <Route path={'/dialogs'} render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                    <Route path={'/dialogs'} render={() => <Dialogs addDialogMessage={props.addDialogMessage} state={props.state.dialogsPage} updateNewDialogMesagge={props.updateNewDialogMesagge} />}/>
                     <Route path={'/profile'} render={() => <Profile
                         profilePage={props.state.profilePage}
                         addPost={props.addPost} updateNewPostText={props.updateNewPostText} />}
