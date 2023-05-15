@@ -1,7 +1,5 @@
-// export const rerenderEntireTree = ()=> {
-//     rerenderEntireTree()
-// }
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = (state: RootStateType)=> {}
+
 
 export type RootStateType = {
     profilePage: ProfilePageType
@@ -98,6 +96,10 @@ export const updateNewDialogMesagge = (newText: string) => {
 
     state.dialogsPage.newDialogMessage = newText
     rerenderEntireTree(state)
+}
+
+export const subscriber = (observer: (state:RootStateType)=>void) => {
+    rerenderEntireTree = observer
 }
 
 
